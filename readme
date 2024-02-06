@@ -1,0 +1,24 @@
+// Assuming jsonData contains the JSON string you provided
+//for youtube data
+const data = JSON.parse(jsonData);
+
+// Now you can access the properties of the data object
+data.data.forEach(video => {
+    console.log("Video Title:", video.title);
+    console.log("Channel Title:", video.channelTitle);
+    console.log("Description:", video.description);
+    console.log("View Count:", video.viewCount);
+    console.log("Published Text:", video.publishedText);
+    console.log("Length:", video.lengthText);
+    
+    // Accessing thumbnail URLs
+    console.log("Thumbnail URLs:");
+    video.thumbnail.forEach(thumbnail => {
+        console.log(thumbnail.url);
+    });
+    
+    // Accessing channel thumbnail URL
+    console.log("Channel Thumbnail URL:", video.channelThumbnail[0].url);
+    
+    // Access other properties as needed
+});
